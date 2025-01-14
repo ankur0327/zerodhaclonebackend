@@ -269,7 +269,9 @@ app.get("/allHoldings", async(req, res)=>{
 });
 app.get("/allPosition", async(req, res)=>{
     let allPosition = await PositionsModel.find({});
+    console.log(allPosition);
     res.json(allPosition);
+    
 });
 
 app.post("/newOrder", async(req, res)=>{
@@ -281,6 +283,13 @@ app.post("/newOrder", async(req, res)=>{
     });
     newOrder.save();
     res.send("order save")
+});
+
+app.get("/newOrder", async(req,res)=>{
+    let allnewOrder = await OrderModel.find({});
+    res.json(allnewOrder);
+    // console.log(newOrder);
+   
 });
 
 app.listen(PORT, ()=>{
