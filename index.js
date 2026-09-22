@@ -149,7 +149,7 @@ const uri =process.env.MONGO_URL;
 
 
 
-    
+ ///   
 
 // app.get("/addPosition", async(req , res)=>{
 //     let tempPosition = [
@@ -281,6 +281,7 @@ app.post("/newOrder", async(req, res)=>{
        price: req.body.price,
        mode:req.body.mode,   
     });
+    console.log(newOrder);
     newOrder.save();
     res.send("order save")
 });
